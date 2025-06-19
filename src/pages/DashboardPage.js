@@ -24,7 +24,7 @@ export default function DashboardPage() {
 
   return (
     <div style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
-      <Title level={3} className="dashboard-title">仪表盘 Dashboard</Title>
+      <Title level={3} className="dashboard-title" >仪表盘 Dashboard</Title>
       <Paragraph>欢迎来到后台管理系统！以下是一些关键指标概览：</Paragraph>
 
       <Row gutter={[16, 16]}>

@@ -21,24 +21,31 @@ import {
   Slider
 } from 'antd';
 import { useState } from 'react';
+import { useGradientButtonStyle } from '../styles/buttonStyles';
 
 const { Title } = Typography;
 const { Option } = Select;
 
 export default function ComponentsPage() {
   const [modalVisible, setModalVisible] = useState(false);
+  const { styles } = useGradientButtonStyle(); // 使用样式
 
   return (
     <Space direction="vertical" size="large" style={{ width: '100%' }}>
 
       <Card title="按钮 Button">
         <Space wrap>
+          {/* ✅ 自定义渐变按钮 */}
+          <Button className={styles.gradientButton} color="default" variant="solid" size="large">
+            申请演示
+          </Button>
           <Button type="primary">Primary</Button>
+
           <Button>Default</Button>
           <Button type="dashed">Dashed</Button>
           <Button type="text">Text</Button>
           <Button type="link">Link</Button>
-          <Button color="pink"  variant='solid'>333</Button>
+
         </Space>
       </Card>
 

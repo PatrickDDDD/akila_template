@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'antd/dist/antd.less'; // 不是 .css！
+import 'antd/dist/reset.css';
 import './styles/fonts.css';   // 字体样式
 
 

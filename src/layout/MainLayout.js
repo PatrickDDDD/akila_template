@@ -20,12 +20,12 @@ export default function MainLayout() {
   const location = useLocation();
 
   const menuItems = [
-    { key: '/', icon: <DashboardOutlined />, label: 'Dashboard' },
-    { key: '/components', icon: <AppstoreOutlined />, label: 'Components' },
-    { key: '/charts', icon: <BarChartOutlined />, label: 'Charts' },
-    { key: '/form', icon: <FormOutlined />, label: 'Form' },
-    { key: '/login', icon: <LoginOutlined />, label: 'Login' },
-    { key: '/settings', icon: <SettingOutlined />, label: 'Settings' },
+    { key: '/', icon: <DashboardOutlined />, label: '仪表盘' },
+    { key: '/components', icon: <AppstoreOutlined />, label: '组件' },
+    { key: '/charts', icon: <BarChartOutlined />, label: '图表' },
+    { key: '/form', icon: <FormOutlined />, label: '表格' },
+    { key: '/login', icon: <LoginOutlined />, label: '登录' },
+    { key: '/settings', icon: <SettingOutlined />, label: '设置' },
   ];
 
   return (
