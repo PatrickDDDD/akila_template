@@ -1,7 +1,7 @@
 // src/pages/DashboardPage.js
 import { Card, Typography, Row, Col, Statistic, List, Timeline } from 'antd';
 import { UserOutlined, LineChartOutlined, DollarOutlined } from '@ant-design/icons';
-import { Line } from '@ant-design/plots';
+import { Line,Base } from '@ant-design/plots';
 
 const { Title, Paragraph } = Typography;
 
@@ -20,6 +20,33 @@ export default function DashboardPage() {
     autoFit: true,
     height: 240,
     color: '#385aea'
+  };
+  const BaseConfig = {
+    type: 'spaceLayer',
+    data: {
+      type: 'fetch',
+      value: 'https://render.alipay.com/p/yuyan/180020010001215413/antd-charts/base-space-layer.json',
+    },
+    children: [
+      {
+        type: 'interval',
+        encode: { x: 'letter', y: 'frequency', color: 'letter' },
+        transform: [{ type: 'sortX', reverse: true, by: 'y' }],
+        scale: { color: { palette: 'cool', offset: (t) => t * 0.8 + 0.1 } },
+      },
+      {
+        type: 'interval',
+        x: 280,
+        y: 50,
+        width: 250,
+        height: 250,
+        encode: { y: 'frequency', color: 'letter' },
+        transform: [{ type: 'stackY' }],
+        scale: { color: { palette: 'cool', offset: (t) => t * 0.8 + 0.1 } },
+        coordinate: { type: 'theta' },
+        legend: false,
+      },
+    ],
   };
 
   return (
@@ -68,6 +95,11 @@ export default function DashboardPage() {
       </Row>
 
       <Row gutter={[16, 16]} style={{ marginTop: 24 }}>
+        <Col xs={24} md={16}>
+          <Card title="系统动态">
+<Base {...BaseConfig} />
+          </Card>
+        </Col>
         <Col span={24}>
           <Card title="系统动态">
             <Timeline
