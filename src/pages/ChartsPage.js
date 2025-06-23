@@ -1,61 +1,119 @@
-// import { Card } from 'antd';
-// import { Bar } from '@ant-design/plots';
 
-// export default function ChartsPage() {
-//   const config = {
-//     data: [
-//       { year: '2020', value: 30 },
-//       { year: '2021', value: 80 },
-//       { year: '2022', value: 45 },
-//       { year: '2023', value: 60 },
-//     ],
-//     xField: 'year',
-//     yField: 'value',
-//     color: ['#1890FF', '#4CAF50', '#FFC107', '#FF5722'], 
-//     height: 300
-//   };
+import { Card, Col, Row } from 'antd';
+import { Bar, Line, Pie, Area } from '@ant-design/plots';
 
-//   return (
-//     <Card title="销售柱状图">
-//       <Bar {...config} />
-//     </Card>
-//   );
-// }
-
-import { Card } from 'antd';
-import { Bar } from '@ant-design/plots';
-
-export default function ChartsPage() {
-  // 修改数据结构，添加颜色字段
-  const data = [
+const ChartsPage = () => {
+  const barData = [
     { year: '2020', value: 30, color: '#1890FF' },
     { year: '2021', value: 80, color: '#4CAF50' },
     { year: '2022', value: 45, color: '#FFC107' },
     { year: '2023', value: 60, color: '#FF5722' },
   ];
 
-  const config = {
-    data,
+  const barConfig = {
+    data: barData,
     xField: 'year',
     yField: 'value',
-    seriesField: 'year', // 关键：按年份分组
-    colorField: 'year',  // 关键：指定颜色映射字段
-    
-    // 使用回调函数设置颜色
+    colorField: 'year',
     color: ({ year }) => {
-      const item = data.find(d => d.year === year);
+      const item = barData.find(d => d.year === year);
       return item ? item.color : '#999';
     },
-    
-    height: 300,
-    legend: {
-      position: 'top-right',
+    height: 240,
+    legend: { position: 'top-right' },
+
+  };
+
+  const lineConfig = {
+    data: barData,
+    xField: 'year',
+    yField: 'value',
+    height: 240,
+    smooth: true,
+    point: {
+      size: 5,
+      shape: 'diamond',
     },
   };
 
+  const pieConfig = {
+    data: [
+      { type: '分类一', value: 27 },
+      { type: '分类二', value: 25 },
+      { type: '分类三', value: 18 },
+      { type: '分类四', value: 15 },
+      { type: '分类五', value: 10 },
+      { type: '其他', value: 5 },
+    ],
+    angleField: 'value',
+    colorField: 'type',
+    innerRadius: 0.6,
+    label: {
+      text: 'value',
+      style: {
+        fontWeight: 'bold',
+      },
+    },
+    legend: {
+      color: {
+        title: false,
+        position: 'right',
+        rowPadding: 5,
+      },
+    },
+    annotations: [
+      {
+        type: 'text',
+        data: [],
+        style: {
+          text: '油脂分布表',
+          x: '50%',
+          y: '50%',
+          textAlign: 'center',
+          fontSize: 40,
+          fontStyle: 'bold',
+        },
+      },
+    ],
+  };
+
+  const areaConfig = {
+    data: barData,
+    xField: 'year',
+    yField: 'value',
+    height: 240,
+    smooth: true,
+    areaStyle: () => ({
+      fill: 'l(270) 0:#ffffff 1:#1890FF',
+    }),
+  };
+
   return (
-    <Card title="销售柱状图">
-      <Bar {...config} />
-    </Card>
+    <div style={{ padding: 24 }}>
+      <Row gutter={[16, 16]}>
+        <Col span={12}>
+          <Card title="销售柱状图">
+            <Bar {...barConfig} />
+          </Card>
+        </Col>
+        <Col span={12}>
+          <Card title="销售折线图">
+            <Line {...lineConfig} />
+          </Card>
+        </Col>
+        <Col span={12}>
+          <Card title="销售饼图">
+            <Pie {...pieConfig} />
+          </Card>
+        </Col>
+        <Col span={12}>
+          <Card title="销售面积图">
+            <Area {...areaConfig} />
+          </Card>
+        </Col>
+      </Row>
+    </div>
   );
-}
+};
+
+export default ChartsPage;

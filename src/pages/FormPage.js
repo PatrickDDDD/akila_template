@@ -1,4 +1,5 @@
 import { Card, Form, Input, Button, Checkbox } from 'antd';
+import '../styles/form.css';
 
 export default function FormPage() {
   return (
