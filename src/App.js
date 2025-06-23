@@ -7,6 +7,7 @@ import ChartsPage from './pages/ChartsPage';
 import FormPage from './pages/FormPage';
 import LoginPage from './pages/LoginPage';
 import SettingsPage from './pages/SettingsPage';
+import LandingPage from './pages/LandingPage';
 
 export default function App() {
   return (
@@ -23,7 +24,7 @@ export default function App() {
     >
       <BrowserRouter>
         <Routes>
-          
+          <Route path='/landing' element={<LandingPage />} />
           <Route path='/' element={<MainLayout />}>
             <Route index element={<DashboardPage />} />
             <Route path='components' element={<ComponentsPage />} />

@@ -61,7 +61,7 @@ export default function MainLayout() {
             selectedKeys={[location.pathname]}
             onClick={({ key }) => navigate(key)}
             items={menuItems}
-            style={{ height: '100%', borderRight: 0 }}
+            style={{ height: '100%', borderRight: 0,background:'#242D53'}}
           />
         </Sider>
 
