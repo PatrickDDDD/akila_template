@@ -9,6 +9,8 @@ import LoginPage from './pages/LoginPage';
 import SettingsPage from './pages/SettingsPage';
 import LandingPage from './pages/LandingPage';
 
+import EarthPage from './pages/EarthPage';
+
 export default function App() {
   return (
     <ConfigProvider
@@ -32,6 +34,8 @@ export default function App() {
             <Route path='form' element={<FormPage />} />
             <Route path='login' element={<LoginPage />} />
             <Route path='settings' element={<SettingsPage />} />
+            <Route path='earth' element={<EarthPage />} />
+            
           </Route>
         </Routes>
       </BrowserRouter>

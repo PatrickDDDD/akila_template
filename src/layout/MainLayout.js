@@ -18,6 +18,7 @@ export default function MainLayout() {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  
 
   const menuItems = [
     { key: '/', icon: <DashboardOutlined />, label: '仪表盘' },
@@ -26,6 +27,7 @@ export default function MainLayout() {
     { key: '/form', icon: <FormOutlined />, label: '表格' },
     { key: '/login', icon: <LoginOutlined />, label: '登录' },
     { key: '/settings', icon: <SettingOutlined />, label: '设置' },
+    { key: '/earth', icon: <BarChartOutlined />, label: '地球' },
   ];
 
   return (
