@@ -2,6 +2,7 @@
 import { Card, Typography, Row, Col, Statistic, List, Timeline } from 'antd';
 import { UserOutlined, LineChartOutlined, DollarOutlined } from '@ant-design/icons';
 import { Line,Base } from '@ant-design/plots';
+import localData from '../data/mixchart.json';
 
 const { Title, Paragraph } = Typography;
 
@@ -24,8 +25,8 @@ export default function DashboardPage() {
   const BaseConfig = {
     type: 'spaceLayer',
     data: {
-      type: 'fetch',
-      value: 'https://render.alipay.com/p/yuyan/180020010001215413/antd-charts/base-space-layer.json',
+      type: 'inline',
+      value: localData,
     },
     children: [
       {

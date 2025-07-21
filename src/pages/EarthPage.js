@@ -34,7 +34,7 @@ export default function EarthPage() {
     }} className="earth-container">
       <div style={{
         position: 'fixed',
-        left: 90,
+        left: 260,
         top: 100,
         width: 320,
         display: 'flex',
