@@ -24,3 +24,8 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow: hidden;
 }
+
+.custom-menu .ant-menu-item-selected {
+  background-color: #037CB6 !important; /* 设置选中项的背景颜色 */
+  color: #fff !important; /* 设置选中项的文字颜色 */
+}

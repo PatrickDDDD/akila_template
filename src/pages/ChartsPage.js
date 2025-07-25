@@ -119,8 +119,6 @@ const ChartsPage = () => {
     },
   };
 
-
-
   const VennConfig = {
         data: [
       { sets: ['冷链'], size: 12, label: '冷链' },
@@ -189,12 +187,14 @@ const ChartsPage = () => {
     tooltip: { items: [{ channel: 'y', valueFormatter: '~s' }] },
   }; 
  
+  
 
   
 
-  return (
+return (
 <div style={{ padding: 24 }}>
   <Row gutter={[16, 16]}>
+    
     <Col xs={24} sm={24} md={12} lg={8}>
       <Card title="销售柱状图">
         <Bar {...barConfig} />

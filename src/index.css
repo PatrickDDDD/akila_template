@@ -28,3 +28,77 @@ code {
 .custom-primary-btn:hover{
   background-color: #D7C8AF !important;
 }
+
+:root {
+  --primary-color: #037CB6;
+  --secondary-color: #66C5EE;
+  --success-color: #DDE455;
+  --warning-color: #FAA61A;
+  --danger-color: #BF4123;
+  --info-color: #909399;
+  --primary-text-color: #303133;
+  --regular-text-color: #606266;
+  --placeholder-color: #C0C4CC;
+  --border-base-color: #DCDFE6;
+}
+
+/* styles.css 或 styles.scss */
+
+.color-box {
+  padding: 10px;
+  color: #fff;
+  margin: 5px;
+}
+
+.primary-color {
+  background: var(--primary-color);
+}
+
+.secondary-color {
+  background: var(--secondary-color);
+}
+
+.success-color {
+  background: var(--success-color);
+}
+
+.warning-color {
+  background: var(--warning-color);
+}
+
+.danger-color {
+  background: var(--danger-color);
+}
+
+.info-color {
+  background: var(--info-color);
+}
+
+.primary-text-color {
+  background: var(--primary-text-color);
+}
+
+.regular-text-color {
+  background: var(--regular-text-color);
+}
+
+.placeholder-color {
+  background: var(--placeholder-color);
+}
+
+.border-base-color {
+  background: var(--border-base-color);
+}
+
+.heading {
+  color: var(--primary-text-color); /* Default color for headings */
+}
+
+.body-text {
+  color: var(--regular-text-color); /* Default color for body text */
+}
+
+.small-text {
+  color: var(--regular-text-color); /* Default color for small text */
+}
+
