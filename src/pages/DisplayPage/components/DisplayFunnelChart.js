@@ -1,6 +1,12 @@
-import { Funnel } from '@ant-design/plots';
+import { Funnel,G2 } from '@ant-design/plots';
 import React from 'react';
 import { createRoot } from 'react-dom';
+function customPalette() {
+  return ['#037CB6', '#66C5EE', '#DDE455', '#FAA61A', '#BF4123'];
+}
+
+G2.register('palette.custom', customPalette);
+
 
 const DisplayFunnelChart = () => {
    const data = [
@@ -12,6 +18,11 @@ const DisplayFunnelChart = () => {
   ];
 
   const config = {
+             scale: {
+      color: {
+        palette: "custom"
+      }
+    },
     data,
     xField: 'action',
     yField: 'pv',

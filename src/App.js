@@ -21,7 +21,7 @@ export default function App() {
           colorPrimary: '#385aea',
           borderRadius: 5,
           fontFamily:
-            'ClarityCity, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+            ' -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
         }
 
       }}

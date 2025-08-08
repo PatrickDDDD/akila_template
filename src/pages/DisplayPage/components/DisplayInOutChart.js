@@ -1,6 +1,12 @@
-import { Area } from '@ant-design/plots';
+import { Area,G2 } from '@ant-design/plots';
 import React from 'react';
 import { createRoot } from 'react-dom';
+
+function customPalette() {
+  return ['#037CB6', '#66C5EE', '#DDE455', '#FAA61A', '#BF4123'];
+}
+
+G2.register('palette.custom', customPalette);
 
 const DisplayInOutChart = () => {
   // 原始数据保持不变
@@ -50,6 +56,11 @@ const DisplayInOutChart = () => {
   ];
 
   const config = {
+        scale: {
+      color: {
+        palette: "custom"
+      }
+    },
     data: formattedData, // 使用本地格式化数据而非远程数据
     xField: 'time', // 时间字段
     yField: 'value', // 数值字段
